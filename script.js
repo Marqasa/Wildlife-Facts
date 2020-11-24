@@ -1,19 +1,3 @@
-const classes = {
-  Mammal: mammals,
-  Bird: birds,
-  Fish: fish,
-  Reptile: reptiles,
-  Amphibian: amphibians,
-  Arthropod: arthropods,
-};
-
-const mammals = { Bat: bats, Bear: bears, Cat: cats };
-const birds = { Robin: robins, Puffin: puffins };
-const fish = { Shark: sharks };
-const reptiles = { Chameleon: chameleons, Snakes: snakes };
-const amphibians = { Frog: frogs };
-const arthropods = { Spider: spiders };
-
 const bats = [
   'Vampire bats prey mainly on cows, horses and other large mammals.',
   'Bats can wrap their wings around insects or fruit to hold it while eating.',
@@ -63,3 +47,36 @@ const spiders = [
   "Spider's legs are covered with many hairs. The hairs pick up vibrations and smells from the air.",
   "Spiders recycle their silk. They eat up what isn't useful anymore and start over with fresh stuff.",
 ];
+
+const mammals = { bat: bats, bear: bears, cat: cats };
+const birds = { robin: robins, puffin: puffins };
+const fish = { shark: sharks };
+const reptiles = { chameleon: chameleons, snakes: snakes };
+const amphibians = { frog: frogs };
+const arthropods = { spider: spiders };
+
+const classes = {
+  mammal: mammals,
+  bird: birds,
+  fish: fish,
+  reptile: reptiles,
+  amphibian: amphibians,
+  arthropod: arthropods,
+};
+
+const classKeys = Object.keys(classes);
+const randomClassIndex = Math.floor(Math.random() * classKeys.length);
+const randomClassKey = classKeys[randomClassIndex];
+const randomClass = classes[randomClassKey];
+
+const animalKeys = Object.keys(randomClass);
+const randomAnimalIndex = Math.floor(Math.random() * animalKeys.length);
+const randomAnimalKey = animalKeys[randomAnimalIndex];
+const randomAnimal = randomClass[randomAnimalKey];
+
+const randomFactIndex = Math.floor(Math.random() * randomAnimal.length);
+const randomFact = randomAnimal[randomFactIndex];
+
+console.log(
+  `A ${randomAnimalKey} is a type of ${randomClassKey}. ${randomFact}`
+);
